@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
 
   if (!args[0]) throw `✳️ ${mssg.useCmd}\n *${usedPrefix + command}* (link unavailable)`
-  m.react('⏳️')
+  conn.sendReact(m.chat, '⏳️', m.key)
   try {
     let res = await fetch(global.API('fgmods', '/api/downloader/igdl', { url: args[0] }, 'apikey'))
     if (!res.ok) throw `❎ ${mssg.error} `
