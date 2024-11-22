@@ -17,16 +17,16 @@
     "eslintfix": "eslint --fix .",
     "postinstall": "node pipdeps.js"
   },
-  "homepage": "https://github.com/Mariela12ad/Thechina-Bot-MD",
+  "homepage": "https://github.com/ianalejandrook15x/CrowBot-MD",
   "author": {
-    "name": "Mariela12ad"
+    "name": "ianalejandrook15x"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mariela12ad/Thechina-Bot-MD.git"
+    "url": "git+https://github.com/ianalejandrook15x/CrowBot-MD.git"
   },
   "bugs": {
-    "url": "https://github.com/Mariela12ad/Thechina-Bot-MD/issues"
+    "url": "https://github.com/ianalejandrook15x/CrowBot-MD/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
