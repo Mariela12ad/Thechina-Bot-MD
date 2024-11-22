@@ -8,7 +8,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     result: 'Archivo descargado con éxito'
   }
 
-  if (!args[0]) throw `✳️ ${mssg.useCmd}\n *${usedPrefix + command}* (https://www.instagram.com/p/CYHeKxyMj-J/?igshid=YmMyMTA2M2Y=)`
+  let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `✳️ ${mssg.useCmd}\n *${usedPrefix + command}* https://www.instagram.com/p/CYHeKxyMj-J/?igshid=YmMyMTA2M2Y=`
+    m.react(rwait)
   try {
     let res = await fetch(global.API('fgmods', '/api/downloader/igdl', { url: args[0] }, 'apikey'))
     if (res.status !== 200) throw `❎ ${mssg.error} `
