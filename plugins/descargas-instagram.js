@@ -1,14 +1,14 @@
 
 import fetch from 'node-fetch'
 
-let mssg = {
-  useCmd: 'Usa el comando correctamente',
-  error: 'Error al descargar el archivo',
-  result: 'Archivo descargado con éxito'
-}
-
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `✳️ ${mssg.useCmd}\n *${usedPrefix + command}* (link unavailable)
+  let mssg = {
+    useCmd: 'Usa el comando correctamente',
+    error: 'Error al descargar el archivo',
+    result: 'Archivo descargado con éxito'
+  }
+
+  if (!args[0]) throw `✳️ ${mssg.useCmd}\n *${usedPrefix + command}* (link unavailable)`
   m.react(rwait)
   try {
     let res = await fetch(global.API('fgmods', '/api/downloader/igdl', { url: args[0] }, 'apikey'))
@@ -28,4 +28,3 @@ handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid']
 handler.diamond = true
 
 export default handler
-
