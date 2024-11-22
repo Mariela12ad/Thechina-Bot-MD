@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let mssg = {
     useCmd: 'Usa el comando correctamente',
-    error: 'Error al descargar el archivo',
+    error: 'cargando....',
     result: 'Archivo descargado con éxito'
   }
 
