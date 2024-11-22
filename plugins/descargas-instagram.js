@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `✳️ ${mssg.useCmd}\n *${usedPrefix + command}* (link unavailable)`
   try {
     let res = await fetch(global.API('fgmods', '/api/downloader/igdl', { url: args[0] }, 'apikey'))
-    if (!res.ok) throw `❎ ${mssg.error} `
+    if (res.status !== 200) throw `❎ ${mssg.error} `
     let data = await res.json()
     for (let item of data.result) {
       conn.sendFile(m.chat, item.url, 'igdl.jpg', `✅ ${mssg.result}`, m)
